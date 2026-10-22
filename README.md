@@ -2,7 +2,7 @@
 
 A web application concept for helping students check dormitory laundry-room availability, see estimated time remaining on active cycles, and join a machine's reservation queue.
 
-> **Project status:** This repository is an early scaffold. The application, API, and database described below are planned functionality and are not implemented yet.
+> **Project status:** The frontend dashboard is implemented as a runnable preview using sample data. The API and database described below are planned functionality and are not implemented yet.
 
 ## Planned features
 
@@ -33,12 +33,10 @@ A web application concept for helping students check dormitory laundry-room avai
 │   │   └── schemas.py
 │   └── requirements.txt
 ├── frontend/
-│   ├── public/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── App.js
-│   │   └── index.js
+│   ├── app.jsx
+│   ├── design.css
+│   ├── index.html
+│   ├── main.jsx
 │   └── package.json
 └── README.md
 ```
@@ -115,7 +113,7 @@ The FastAPI service will provide interactive API documentation at `http://localh
 ### Prerequisites
 
 - Python 3.10+
-- Node.js 16+ and npm
+- Node.js 18+ and npm
 - MySQL 8+
 
 ### Database
@@ -138,16 +136,15 @@ Configure the backend's MySQL connection using environment variables or another 
 
 ### Frontend
 
-Once the frontend files have been implemented:
+Run the frontend preview:
 
 ```powershell
 cd frontend
 npm install
-npm install react-router-dom
-npm start
+npm run dev
 ```
 
-The frontend development server is expected at `http://localhost:3000`.
+Vite prints the local development URL when it starts. The dashboard currently uses sample machine data, and machine actions only update the page state; connect the planned API before using it with real laundry-room data.
 
 ## Contributing
 
